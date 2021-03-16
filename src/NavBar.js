@@ -8,6 +8,7 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <NavLink className="navbar-brand" exact to="/">StarWars.ly</NavLink>
+      {/* Hamburger menu */}
       <button className="navbar-toggler" type="button" data-toggle="collapse"
               data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -15,6 +16,7 @@ function NavBar() {
         <span className="navbar-toggler-icon" />
       </button>
 
+      {/* Routes s*/}
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">

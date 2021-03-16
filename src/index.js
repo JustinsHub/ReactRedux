@@ -8,7 +8,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { store, persistedStore} from "./store"
 
-
+//Wrap our App with redux store to use universally. 
+//PersistGate delays the rendering of your app's UI until your persisted state has been retrieved and saved to redux.
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistedStore}>

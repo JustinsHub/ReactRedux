@@ -15,7 +15,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, root);
 
-
+//applying thunk and DevTools to store
 export const store = createStore(
   persistedReducer,
   composeWithDevTools(
