@@ -6,10 +6,12 @@ import { resetAll } from "./actions/reset";
 
 
 function HomePage() {
+  //undefined when opened with nothing on initial state. Gets films index of 1. 
   const loaded = useSelector(st => st.films[1] !== undefined);
   const dispatch = useDispatch();
 
   function reset() {
+    //returns it to initial_state = {}
     dispatch(resetAll());
   }
   
@@ -23,10 +25,14 @@ function HomePage() {
           Reset To Fresh Exploration
         </button>
       ) : (
+
+        //default to films/1 which has already been requested when the page starts.
         <Link to="/films/1" className="btn btn-primary btn-block btn-lg">
           Start with &ldquo;A New Hope&rdquo;
         </Link>
       )}
+
+      {/* Star Wars Title image */}
       <img
         className="mt-3 mb-5 w-100"
         alt="StarWars.ly"

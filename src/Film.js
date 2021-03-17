@@ -8,17 +8,19 @@ import Sublist from "./Sublist";
 function Film() {
 
   const {id} = useParams();
-  const film = useSelector(st => st.films[id]);
+  const film = useSelector(st => st.films[id]); //getting films based on key ID
   const planetState = useSelector(st => st.planets);
   const characterState = useSelector(st => st.people);
   const dispatch = useDispatch();
   const missing = !film;
 
+  //initial API film request when page is loaded based on params id. 
+  //if there has been no request/id found yet, make one.
   useEffect(function() {
     if (missing) {
       dispatch(getFilmFromAPI(id));
     }
-  }, [missing, id, dispatch]);
+  }, [missing, id, dispatch]); 
 
   if (missing) return <h1 className="mt-5">loading...</h1>;
 

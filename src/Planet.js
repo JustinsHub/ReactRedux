@@ -14,6 +14,9 @@ function Planet() {
   const dispatch = useDispatch();
   const missing = !planet;
 
+
+  //initial API planet request when page is loaded based on params id. 
+  //if there has been no request/id found yet, make one.
   useEffect(function() {
     if (missing) {
       dispatch(getPlanetFromAPI(id));
@@ -22,12 +25,15 @@ function Planet() {
 
   if (missing) return "loading...";
 
+  //all the planet/films/residents each have a relational value pair to access.
+  //access with films that relates to that planet based on it's relation.
   const films = planet.films.map(fid => ({
     id: fid,
     url: `/films/${fid}`,
     display: filmState[fid] ? filmState[fid].name : "Unknown"
   }));
 
+  //access with residents that relates to that planet based on it's relation.
   const residents = planet.residents.map(pid => ({
     id: pid,
     url: `/people/${pid}`,
