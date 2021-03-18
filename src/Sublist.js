@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-
+//re-useable generic component.
+//takes a title and items props passed down.
+//maps through the items prop to render.
 function Sublist({title, items}) {
   return (
     <>

@@ -24,12 +24,15 @@ function Film() {
 
   if (missing) return <h1 className="mt-5">loading...</h1>;
 
+  //all the planet/films/residents each have a relational value pair to access.
+  //access with planets that relates to that film based on it's relation.
   const planets = film.planets.map(pid => ({
     id: pid,
     url: `/planets/${pid}`,
     display: planetState[pid] ? planetState[pid].name : "Unknown"
   }));
 
+  //access with character that relates to that film based on it's relation.
   const characters = film.characters.map(cid => ({
     id: cid,
     url: `/people/${cid}`,

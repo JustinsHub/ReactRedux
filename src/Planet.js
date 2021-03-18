@@ -17,6 +17,7 @@ function Planet() {
 
   //initial API planet request when page is loaded based on params id. 
   //if there has been no request/id found yet, make one.
+  //all id's are provided by the API.
   useEffect(function() {
     if (missing) {
       dispatch(getPlanetFromAPI(id));

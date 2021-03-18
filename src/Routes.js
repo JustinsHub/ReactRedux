@@ -8,6 +8,8 @@ import Planet from "./Planet";
 import Person from "./Person";
 import HomePage from "./HomePage";
 
+
+//Routes to every url parameter
 function Routes() {
   return (
     <Switch>

@@ -6,7 +6,8 @@ function getFilmFromAPI(id) {
   return async function (dispatch) {
     const res = await axios.get(`https://swapi.dev/api/films/${id}/`);
 
-    //destructuring and setting. title and opening_crawl to have different name values.
+    //destructuring and setting title and opening_crawl to have different name values.
+    //grabbing these values from the API.
     let {
       title: name,
       director,
@@ -26,7 +27,7 @@ function getFilmFromAPI(id) {
 }
 
 //our film action creator passed inside our thunk to dispatch the certain action.
-//payload takes in ...object passed in.
+//payload takes in ...object passed in and that gets rendered
 function gotFilm(film) {
   return { type: LOAD_FILM, payload: film };
 }
